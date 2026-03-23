@@ -82,44 +82,57 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-[2.5rem] shadow-sm border border-gray-50 h-fit sticky top-10">
-                    <h3 class="font-black text-xl mb-6 flex items-center gap-3">
-                        <span class="w-4.5 h-6 bg-maroon rounded-full"></span> Add Task
-                    </h3>
-                    <form id="task-form" class="space-y-4">
-                        <input type="text" id="title" required placeholder="What needs to be done?" class="w-full p-4 bg-gray-50 rounded-2xl outline-none focus:ring-2 focus:ring-red-100 transition font-medium">
-                        <div class="grid grid-cols-2 gap-3">
-                            <select id="category" class="w-full p-4 bg-gray-50 rounded-2xl outline-none text-sm font-bold text-gray-500">
-                                <option value="Kuliah">Tugas Kuliah</option>
-                                <option value="Praktikum">Laporan Praktikum</option>
-                                <option value="Organisasi">Organisasi/Activity</option>
-                            </select>
-                            <input type="datetime-local" id="deadline" required class="w-full p-4 bg-gray-50 rounded-2xl outline-none text-[10px] font-bold text-gray-500">
-                        </div>
-                        <button type="submit" class="w-full bg-maroon text-white font-black py-4 rounded-2xl shadow-xl shadow-red-100 hover:scale-[1.02] active:scale-95 transition-all">CREATE TASK</button>
-                    </form>
+     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10"> <div class="bg-white p-10 rounded-[3rem] shadow-sm border border-gray-50 h-fit sticky top-10">
+        <h3 class="font-black text-2xl mb-8 flex items-center gap-4">
+            <span class="w-2 h-8 bg-maroon rounded-full"></span> Add Task
+        </h3>
+        <form id="task-form" class="space-y-6">
+            <div>
+                <label class="text-[10px] font-black uppercase text-gray-400 ml-2 mb-2 block tracking-widest">Activity Name</label>
+                <input type="text" id="task-name" required placeholder="What's the activity?" class="w-full p-5 bg-gray-50 rounded-2xl outline-none border-2 border-transparent focus:border-red-100 transition font-bold text-lg">
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="text-[10px] font-black uppercase text-gray-400 ml-2 mb-2 block tracking-widest">Category</label>
+                    <select id="category" class="w-full p-5 bg-gray-50 rounded-2xl outline-none font-bold text-gray-600 appearance-none cursor-pointer border-2 border-transparent focus:border-red-100">
+                        <option value="Kuliah">📚 Tugas Kuliah</option>
+                        <option value="Praktikum">🧪 Laporan Praktikum</option>
+                        <option value="Organisasi">🤝 Organisasi</option>
+                    </select>
                 </div>
-
-                <div class="lg:col-span-2 space-y-10">
-                    <div>
-                        <div class="flex justify-between items-center mb-6 px-2">
-                            <h3 class="font-black text-xl">Recent Tasks</h3>
-                            <span class="text-[10px] font-black text-maroon bg-red-50 px-3 py-1 rounded-full" id="active-count">0 ACTIVE</span>
-                        </div>
-                        <div id="activity-list" class="space-y-4"></div>
-                    </div>
-
-                    <div class="pt-8 border-t border-gray-100">
-                        <div class="flex justify-between items-center mb-6 px-2">
-                            <h3 class="font-black text-xl text-gray-300">Activity History</h3>
-                            <i class="fas fa-history text-gray-200"></i>
-                        </div>
-                        <div id="history-list" class="space-y-3"></div>
-                    </div>
+                <div>
+                    <label class="text-[10px] font-black uppercase text-gray-400 ml-2 mb-2 block tracking-widest">Schedule</label>
+                    <input type="datetime-local" id="deadline" required class="w-full p-5 bg-gray-50 rounded-2xl outline-none font-bold text-gray-600 border-2 border-transparent focus:border-red-100">
                 </div>
             </div>
-        </section>
+
+            <button type="submit" class="w-full bg-maroon text-white font-black py-5 rounded-[2rem] shadow-2xl shadow-red-100 hover:scale-[1.02] active:scale-95 transition-all text-lg tracking-widest uppercase">
+                CREATE TASK
+            </button>
+        </form>
+    </div>
+
+    <div class="space-y-12">
+        <div>
+            <div class="flex justify-between items-center mb-8 px-4">
+                <h3 class="font-black text-2xl tracking-tight">Active Tasks</h3>
+                <span class="text-[10px] font-black text-maroon bg-red-50 px-4 py-2 rounded-full tracking-widest" id="active-count text-lg">0 ACTIVE</span>
+            </div>
+            <div id="activity-list" class="space-y-5">
+                </div>
+        </div>
+
+        <div class="pt-10 border-t border-gray-100">
+            <div class="flex justify-between items-center mb-8 px-4 opacity-40">
+                <h3 class="font-black text-xl">Activity History</h3>
+                <i class="fas fa-history text-xl"></i>
+            </div>
+            <div id="history-list" class="space-y-4">
+                </div>
+        </div>
+    </div>
+</div>
 
         <section id="courses" class="tab-content">
             <h2 class="text-2xl font-bold mb-6">Mata Kuliah Semester Ini</h2>
